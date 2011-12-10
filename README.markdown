@@ -6,6 +6,7 @@ A simple OO wrapper for PHP inotify module
 * The [inotify module for PHP](http://www.php.net/manual/en/inotify.install.php "inotify module for PHP").
 
 ## Example
+    <?php
     $inotify = new Djme_Inotify();
     $inotify->addWatch(__DIR__);
     while (true) {
