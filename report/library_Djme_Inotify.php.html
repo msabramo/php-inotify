@@ -71,12 +71,12 @@
           <td class="coverNumLo">2 / 6</td>
           <td class="crap"><acronym title="Change Risk Anti-Patterns (CRAP) Index">CRAP</acronym></td>
           <td class="coverBar">
-            <div class="coverBarOutline" title="31.58%">
-                <div class="size scarlet_red"  style="width:31.578947368421%" title="31.58%"></div>
+            <div class="coverBarOutline" title="40.91%">
+                <div class="size butter"  style="width:40.909090909091%" title="40.91%"></div>
             </div>
           </td>
-          <td class="coverPerLo">31.58%</td>
-          <td class="coverNumLo">6 / 19</td>
+          <td class="coverPerMed">40.91%</td>
+          <td class="coverNumMed">9 / 22</td>
         </tr>
 
         <tr>
@@ -95,14 +95,14 @@
           </td>
           <td class="coverPerLo">33.33%</td>
           <td class="coverNumLo">2 / 6</td>
-          <td class="crap">34.95</td>
+          <td class="crap">30.63</td>
           <td class="coverBar">
-            <div class="coverBarOutline" title="31.58%">
-                <div class="size scarlet_red"  style="width:31.578947368421%" title="31.58%"></div>
+            <div class="coverBarOutline" title="40.91%">
+                <div class="size butter"  style="width:40.909090909091%" title="40.91%"></div>
             </div>
           </td>
-          <td class="coverPerLo">31.58%</td>
-          <td class="coverNumLo">6 / 19</td>
+          <td class="coverPerMed">40.91%</td>
+          <td class="coverNumMed">9 / 22</td>
         </tr>
 
         <tr>
@@ -152,18 +152,18 @@
           </td>
           <td class="coverPerLo">0.00%</td>
           <td class="coverNumLo">0 / 1</td>
-          <td class="crap">6</td>
+          <td class="crap">3.58</td>
           <td class="coverBar">
-              <div class="coverBarOutline" title="0.00%">
-                  <div class="size scarlet_red"  style="width:0%" title="0.00%"></div>
+              <div class="coverBarOutline" title="60.00%">
+                  <div class="size butter"  style="width:60%" title="60.00%"></div>
               </div>
           </td>
-          <td class="coverPerLo">0.00%</td>
-          <td class="coverNumLo">0 / 2</td>
+          <td class="coverPerMed">60.00%</td>
+          <td class="coverNumMed">3 / 5</td>
         </tr>
 
         <tr>
-          <td class="coverFile" colspan="4">&nbsp;<a href="#70">queueLen()</a></td>
+          <td class="coverFile" colspan="4">&nbsp;<a href="#74">queueLen()</a></td>
           <td class="coverBar">
             <div class="coverBarOutline" title="0.00%">
                 <div class="size scarlet_red"  style="width:0%" title="0.00%"></div>
@@ -182,7 +182,7 @@
         </tr>
 
         <tr>
-          <td class="coverFile" colspan="4">&nbsp;<a href="#74">read()</a></td>
+          <td class="coverFile" colspan="4">&nbsp;<a href="#78">read()</a></td>
           <td class="coverBar">
             <div class="coverBarOutline" title="0.00%">
                 <div class="size scarlet_red"  style="width:0%" title="0.00%"></div>
@@ -201,7 +201,7 @@
         </tr>
 
         <tr>
-          <td class="coverFile" colspan="4">&nbsp;<a href="#86">rmWatch($watch_descriptor)</a></td>
+          <td class="coverFile" colspan="4">&nbsp;<a href="#90">rmWatch($watch_descriptor)</a></td>
           <td class="coverBar">
             <div class="coverBarOutline" title="0.00%">
                 <div class="size scarlet_red"  style="width:0%" title="0.00%"></div>
@@ -285,44 +285,48 @@
 <span class="lineNum" id="container51"><a name="51"></a><a href="#51" id="line51">      51</a> </span>                :         private $handle;                                          
 <span class="lineNum" id="container52"><a name="52"></a><a href="#52" id="line52">      52</a> </span>                :                                                                   
 <span class="lineNum" id="container53"><a name="53"></a><a href="#53" id="line53">      53</a> </span>                :         protected static function isInotifyPhpExtensionLoaded() { 
-<span class="lineNum" id="container54"><a name="54"></a><a href="#54" id="line54">      54</a> </span><span class="lineCov">              1 :             return extension_loaded('inotify');                   </span>
+<span class="lineNum" id="container54"><a name="54"></a><a href="#54" id="line54">      54</a> </span><span class="lineCov">              2 :             return extension_loaded('inotify');                   </span>
 <span class="lineNum" id="container55"><a name="55"></a><a href="#55" id="line55">      55</a> </span>                :         }                                                         
 <span class="lineNum" id="container56"><a name="56"></a><a href="#56" id="line56">      56</a> </span>                :                                                                   
 <span class="lineNum" id="container57"><a name="57"></a><a href="#57" id="line57">      57</a> </span>                :         public function __construct() {                           
-<span class="lineNum" id="container58"><a name="58"></a><a href="#58" id="line58">      58</a> </span><span class="lineCov">              2 :             if (!$this-&gt;isInotifyPhpExtensionLoaded()) {          </span>
+<span class="lineNum" id="container58"><a name="58"></a><a href="#58" id="line58">      58</a> </span><span class="lineCov">              3 :             if (!$this-&gt;isInotifyPhpExtensionLoaded()) {          </span>
 <span class="lineNum" id="container59"><a name="59"></a><a href="#59" id="line59">      59</a> </span><span class="lineCov">              1 :                 throw new Djme_Inotify_Exception_MissingPhpModule(</span>
 <span class="lineNum" id="container60"><a name="60"></a><a href="#60" id="line60">      60</a> </span><span class="lineCov">              1 :                     'Missing PHP module \'inotify\'.');           </span>
 <span class="lineNum" id="container61"><a name="61"></a><a href="#61" id="line61">      61</a> </span>                :             }                                                     
-<span class="lineNum" id="container62"><a name="62"></a><a href="#62" id="line62">      62</a> </span><span class="lineCov">              1 :             $this-&gt;handle = inotify_init();                       </span>
-<span class="lineNum" id="container63"><a name="63"></a><a href="#63" id="line63">      63</a> </span><span class="lineCov">              1 :         }                                                         </span>
+<span class="lineNum" id="container62"><a name="62"></a><a href="#62" id="line62">      62</a> </span><span class="lineCov">              2 :             $this-&gt;handle = inotify_init();                       </span>
+<span class="lineNum" id="container63"><a name="63"></a><a href="#63" id="line63">      63</a> </span><span class="lineCov">              2 :         }                                                         </span>
 <span class="lineNum" id="container64"><a name="64"></a><a href="#64" id="line64">      64</a> </span>                :                                                                   
 <span class="lineNum" id="container65"><a name="65"></a><a href="#65" id="line65">      65</a> </span>                :         public function addWatch($pathname, $mask = null) {       
-<span class="lineNum" id="container66"><a name="66"></a><a href="#66" id="line66">      66</a> </span><span class="lineNoCov">              0 :             return inotify_add_watch($this-&gt;handle, $pathname,    </span>
-<span class="lineNum" id="container67"><a name="67"></a><a href="#67" id="line67">      67</a> </span><span class="lineNoCov">              0 :                 is_null($mask) ? self::ALL_EVENTS : $mask);       </span>
-<span class="lineNum" id="container68"><a name="68"></a><a href="#68" id="line68">      68</a> </span>                :         }                                                         
-<span class="lineNum" id="container69"><a name="69"></a><a href="#69" id="line69">      69</a> </span>                :                                                                   
-<span class="lineNum" id="container70"><a name="70"></a><a href="#70" id="line70">      70</a> </span>                :         public function queueLen() {                              
-<span class="lineNum" id="container71"><a name="71"></a><a href="#71" id="line71">      71</a> </span><span class="lineNoCov">              0 :             return inotify_queue_len($this-&gt;handle);              </span>
+<span class="lineNum" id="container66"><a name="66"></a><a href="#66" id="line66">      66</a> </span><span class="lineCov">              1 :             if (!file_exists($pathname)) {                        </span>
+<span class="lineNum" id="container67"><a name="67"></a><a href="#67" id="line67">      67</a> </span><span class="lineCov">              1 :                 throw new Djme_Inotify_Exception_PathNotFound(    </span>
+<span class="lineNum" id="container68"><a name="68"></a><a href="#68" id="line68">      68</a> </span><span class="lineCov">              1 :                     'Path \'\' not found.');                      </span>
+<span class="lineNum" id="container69"><a name="69"></a><a href="#69" id="line69">      69</a> </span>                :             }                                                     
+<span class="lineNum" id="container70"><a name="70"></a><a href="#70" id="line70">      70</a> </span><span class="lineNoCov">              0 :             return inotify_add_watch($this-&gt;handle, $pathname,    </span>
+<span class="lineNum" id="container71"><a name="71"></a><a href="#71" id="line71">      71</a> </span><span class="lineNoCov">              0 :                 is_null($mask) ? self::ALL_EVENTS : $mask);       </span>
 <span class="lineNum" id="container72"><a name="72"></a><a href="#72" id="line72">      72</a> </span>                :         }                                                         
 <span class="lineNum" id="container73"><a name="73"></a><a href="#73" id="line73">      73</a> </span>                :                                                                   
-<span class="lineNum" id="container74"><a name="74"></a><a href="#74" id="line74">      74</a> </span>                :         public function read() {                                  
-<span class="lineNum" id="container75"><a name="75"></a><a href="#75" id="line75">      75</a> </span><span class="lineNoCov">              0 :             $results = array ();                                  </span>
-<span class="lineNum" id="container76"><a name="76"></a><a href="#76" id="line76">      76</a> </span><span class="lineNoCov">              0 :             foreach (inotify_read($this-&gt;handle) as $info) {      </span>
-<span class="lineNum" id="container77"><a name="77"></a><a href="#77" id="line77">      77</a> </span><span class="lineNoCov">              0 :                 $results[] = new Djme_Inotify_Read_Result(        </span>
-<span class="lineNum" id="container78"><a name="78"></a><a href="#78" id="line78">      78</a> </span><span class="lineNoCov">              0 :                     $info['wd'],                                  </span>
-<span class="lineNum" id="container79"><a name="79"></a><a href="#79" id="line79">      79</a> </span><span class="lineNoCov">              0 :                     $info['mask'],                                </span>
-<span class="lineNum" id="container80"><a name="80"></a><a href="#80" id="line80">      80</a> </span><span class="lineNoCov">              0 :                     $info['cookie'],                              </span>
-<span class="lineNum" id="container81"><a name="81"></a><a href="#81" id="line81">      81</a> </span><span class="lineNoCov">              0 :                     $info['name']);                               </span>
-<span class="lineNum" id="container82"><a name="82"></a><a href="#82" id="line82">      82</a> </span><span class="lineNoCov">              0 :             }                                                     </span>
-<span class="lineNum" id="container83"><a name="83"></a><a href="#83" id="line83">      83</a> </span><span class="lineNoCov">              0 :             return $results;                                      </span>
-<span class="lineNum" id="container84"><a name="84"></a><a href="#84" id="line84">      84</a> </span>                :         }                                                         
-<span class="lineNum" id="container85"><a name="85"></a><a href="#85" id="line85">      85</a> </span>                :                                                                   
-<span class="lineNum" id="container86"><a name="86"></a><a href="#86" id="line86">      86</a> </span>                :         public function rmWatch($watch_descriptor) {              
-<span class="lineNum" id="container87"><a name="87"></a><a href="#87" id="line87">      87</a> </span><span class="lineNoCov">              0 :             return inotify_rm_watch($watch_descriptor);           </span>
+<span class="lineNum" id="container74"><a name="74"></a><a href="#74" id="line74">      74</a> </span>                :         public function queueLen() {                              
+<span class="lineNum" id="container75"><a name="75"></a><a href="#75" id="line75">      75</a> </span><span class="lineNoCov">              0 :             return inotify_queue_len($this-&gt;handle);              </span>
+<span class="lineNum" id="container76"><a name="76"></a><a href="#76" id="line76">      76</a> </span>                :         }                                                         
+<span class="lineNum" id="container77"><a name="77"></a><a href="#77" id="line77">      77</a> </span>                :                                                                   
+<span class="lineNum" id="container78"><a name="78"></a><a href="#78" id="line78">      78</a> </span>                :         public function read() {                                  
+<span class="lineNum" id="container79"><a name="79"></a><a href="#79" id="line79">      79</a> </span><span class="lineNoCov">              0 :             $results = array ();                                  </span>
+<span class="lineNum" id="container80"><a name="80"></a><a href="#80" id="line80">      80</a> </span><span class="lineNoCov">              0 :             foreach (inotify_read($this-&gt;handle) as $info) {      </span>
+<span class="lineNum" id="container81"><a name="81"></a><a href="#81" id="line81">      81</a> </span><span class="lineNoCov">              0 :                 $results[] = new Djme_Inotify_Read_Result(        </span>
+<span class="lineNum" id="container82"><a name="82"></a><a href="#82" id="line82">      82</a> </span><span class="lineNoCov">              0 :                     $info['wd'],                                  </span>
+<span class="lineNum" id="container83"><a name="83"></a><a href="#83" id="line83">      83</a> </span><span class="lineNoCov">              0 :                     $info['mask'],                                </span>
+<span class="lineNum" id="container84"><a name="84"></a><a href="#84" id="line84">      84</a> </span><span class="lineNoCov">              0 :                     $info['cookie'],                              </span>
+<span class="lineNum" id="container85"><a name="85"></a><a href="#85" id="line85">      85</a> </span><span class="lineNoCov">              0 :                     $info['name']);                               </span>
+<span class="lineNum" id="container86"><a name="86"></a><a href="#86" id="line86">      86</a> </span><span class="lineNoCov">              0 :             }                                                     </span>
+<span class="lineNum" id="container87"><a name="87"></a><a href="#87" id="line87">      87</a> </span><span class="lineNoCov">              0 :             return $results;                                      </span>
 <span class="lineNum" id="container88"><a name="88"></a><a href="#88" id="line88">      88</a> </span>                :         }                                                         
 <span class="lineNum" id="container89"><a name="89"></a><a href="#89" id="line89">      89</a> </span>                :                                                                   
-<span class="lineNum" id="container90"><a name="90"></a><a href="#90" id="line90">      90</a> </span>                :     }                                                             
-<span class="lineNum" id="container91"><a name="91"></a><a href="#91" id="line91">      91</a> </span>                :                                                                   
+<span class="lineNum" id="container90"><a name="90"></a><a href="#90" id="line90">      90</a> </span>                :         public function rmWatch($watch_descriptor) {              
+<span class="lineNum" id="container91"><a name="91"></a><a href="#91" id="line91">      91</a> </span><span class="lineNoCov">              0 :             return inotify_rm_watch($watch_descriptor);           </span>
+<span class="lineNum" id="container92"><a name="92"></a><a href="#92" id="line92">      92</a> </span>                :         }                                                         
+<span class="lineNum" id="container93"><a name="93"></a><a href="#93" id="line93">      93</a> </span>                :                                                                   
+<span class="lineNum" id="container94"><a name="94"></a><a href="#94" id="line94">      94</a> </span>                :     }                                                             
+<span class="lineNum" id="container95"><a name="95"></a><a href="#95" id="line95">      95</a> </span>                :                                                                   
 
 </pre>
         </td>
@@ -331,7 +335,7 @@
 
     <table width="100%" border="0" cellspacing="0" cellpadding="0">
       <tr><td class="ruler"><img src="glass.png" width="3" height="3" alt=""></td></tr>
-      <tr><td class="versionInfo">Generated by <a href="http://github.com/sebastianbergmann/php-code-coverage" target="_top">PHP_CodeCoverage 1.1.2</a> using <a href="http://www.php.net/" target="_top">PHP 5.3.10-1ubuntu1</a> and PHPUnit 3.6.10 at Tue Mar 6 21:16:43 UTC 2012.</td></tr>
+      <tr><td class="versionInfo">Generated by <a href="http://github.com/sebastianbergmann/php-code-coverage" target="_top">PHP_CodeCoverage 1.1.2</a> using <a href="http://www.php.net/" target="_top">PHP 5.3.10-1ubuntu1</a> and PHPUnit 3.6.10 at Tue Mar 6 21:27:55 UTC 2012.</td></tr>
     </table>
 
     <br />
@@ -342,13 +346,13 @@
       YAHOO.namespace("phpunit.container");
       YAHOO.phpunit.container.panelsData = {
         "panel54": {
-          "header": "1 test covers line 54",
-          "body": "<ul><li class=\"testPassed\">Djme_InotifyTest::test_contructor_basic</li></ul>",
+          "header": "2 tests cover line 54",
+          "body": "<ul><li class=\"testPassed\">Djme_InotifyTest::test_contructor_basic</li><li class=\"testPassed\">Djme_InotifyTest::test_addWatch_emptyPathname</li></ul>",
           "footer": ""
         },
         "panel58": {
-          "header": "2 tests cover line 58",
-          "body": "<ul><li class=\"testPassed\">Djme_InotifyTest::test_contructor_basic</li><li class=\"testPassed\">Djme_InotifyTest::test_contructor_mockNoInotifyExtension</li></ul>",
+          "header": "3 tests cover line 58",
+          "body": "<ul><li class=\"testPassed\">Djme_InotifyTest::test_contructor_basic</li><li class=\"testPassed\">Djme_InotifyTest::test_contructor_mockNoInotifyExtension</li><li class=\"testPassed\">Djme_InotifyTest::test_addWatch_emptyPathname</li></ul>",
           "footer": ""
         },
         "panel59": {
@@ -362,13 +366,28 @@
           "footer": ""
         },
         "panel62": {
-          "header": "1 test covers line 62",
-          "body": "<ul><li class=\"testPassed\">Djme_InotifyTest::test_contructor_basic</li></ul>",
+          "header": "2 tests cover line 62",
+          "body": "<ul><li class=\"testPassed\">Djme_InotifyTest::test_contructor_basic</li><li class=\"testPassed\">Djme_InotifyTest::test_addWatch_emptyPathname</li></ul>",
           "footer": ""
         },
         "panel63": {
-          "header": "1 test covers line 63",
-          "body": "<ul><li class=\"testPassed\">Djme_InotifyTest::test_contructor_basic</li></ul>",
+          "header": "2 tests cover line 63",
+          "body": "<ul><li class=\"testPassed\">Djme_InotifyTest::test_contructor_basic</li><li class=\"testPassed\">Djme_InotifyTest::test_addWatch_emptyPathname</li></ul>",
+          "footer": ""
+        },
+        "panel66": {
+          "header": "1 test covers line 66",
+          "body": "<ul><li class=\"testPassed\">Djme_InotifyTest::test_addWatch_emptyPathname</li></ul>",
+          "footer": ""
+        },
+        "panel67": {
+          "header": "1 test covers line 67",
+          "body": "<ul><li class=\"testPassed\">Djme_InotifyTest::test_addWatch_emptyPathname</li></ul>",
+          "footer": ""
+        },
+        "panel68": {
+          "header": "1 test covers line 68",
+          "body": "<ul><li class=\"testPassed\">Djme_InotifyTest::test_addWatch_emptyPathname</li></ul>",
           "footer": ""
         },
       "dummy": ""

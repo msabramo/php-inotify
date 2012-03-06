@@ -14,5 +14,13 @@
 			$inotify = new Mock_Djme_Inotify_NoInotifyExtension();
 		}
 		
+		public function test_addWatch_emptyPathname() {
+			$inotify = new Djme_Inotify();
+			$this->setExpectedException(
+				'Djme_Inotify_Exception_PathNotFound',
+				'Path \'\' not found.');
+			$inotify->addWatch('');
+		}
+		
 	}
 	
