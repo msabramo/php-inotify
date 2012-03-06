@@ -79,8 +79,17 @@
 		}
 		
 		public function read() {
+			$read = array($this->handle);
+			$write = null;
+			$except = null;
+			stream_select($read, $write, $except, 0);
+			stream_set_blocking($this->handle, 0);
+			if (($read_results =
+				inotify_read($this->handle)) === false) {
+				return array ();
+			}
 			$results = array ();
-			foreach (inotify_read($this->handle) as $info) {
+			foreach ($read_results as $info) {
 				$results[] = new Djme_Inotify_Read_Result(
 					$info['wd'],
 					$info['mask'],
