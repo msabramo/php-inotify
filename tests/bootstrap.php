@@ -1,5 +1,5 @@
 <?php
-
+	
 	/**
 	 * @codeCoverageIgnore
 	 */
@@ -11,7 +11,6 @@
 			);
 			foreach ($relpaths as $relpath) {
 				$path = realpath(__DIR__. $relpath). '/'. str_replace('_', '/', $class_name). '.php';
-				var_dump($path, $relpath);
 				if (!file_exists($path)) {
 					continue;
 				}
