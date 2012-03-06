@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit colors="true" bootstrap="./tests/bootstrap.php"
+	stopOnError="true" stopOnFailure="true"
+	stopOnIncomplete="true" stopOnSkipped="true">
+	<testsuite name="unit">
+		<directory>./tests/unit</directory>
+	</testsuite>
+	<logging>
+		<log type="coverage-text" target="php://stdout" />
+		<log type="coverage-html" target="./report" />
+	</logging>
+</phpunit>

@@ -50,8 +50,12 @@
 		
 		private $handle;
 		
+		protected static function isInotifyPhpExtensionLoaded() {
+			return extension_loaded('inotify');
+		}
+		
 		public function __construct() {
-			if (!extension_loaded('inotify')) {
+			if (!$this->isInotifyPhpExtensionLoaded()) {
 				throw new Djme_Inotify_Exception_MissingPhpModule(
 					'Missing PHP module \'inotify\'.');
 			}
