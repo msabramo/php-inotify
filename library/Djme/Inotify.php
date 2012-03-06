@@ -67,8 +67,10 @@
 				throw new Djme_Inotify_Exception_PathNotFound(
 					'Path \''. $pathname. '\' not found.');
 			}
-			return inotify_add_watch($this->handle, $pathname,
-				is_null($mask) ? self::ALL_EVENTS : $mask);
+			if (is_null($mask)) {
+				return inotify_add_watch($this->handle, $pathname);
+			}
+			return inotify_add_watch($this->handle, $pathname, $mask);
 		}
 		
 		public function queueLen() {
