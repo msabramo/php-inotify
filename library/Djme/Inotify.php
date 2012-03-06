@@ -65,7 +65,7 @@
 		public function addWatch($pathname, $mask = null) {
 			if (!file_exists($pathname)) {
 				throw new Djme_Inotify_Exception_PathNotFound(
-					'Path \'\' not found.');
+					'Path \''. $pathname. '\' not found.');
 			}
 			return inotify_add_watch($this->handle, $pathname,
 				is_null($mask) ? self::ALL_EVENTS : $mask);

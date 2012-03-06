@@ -285,21 +285,21 @@
 <span class="lineNum" id="container51"><a name="51"></a><a href="#51" id="line51">      51</a> </span>                :         private $handle;                                          
 <span class="lineNum" id="container52"><a name="52"></a><a href="#52" id="line52">      52</a> </span>                :                                                                   
 <span class="lineNum" id="container53"><a name="53"></a><a href="#53" id="line53">      53</a> </span>                :         protected static function isInotifyPhpExtensionLoaded() { 
-<span class="lineNum" id="container54"><a name="54"></a><a href="#54" id="line54">      54</a> </span><span class="lineCov">              2 :             return extension_loaded('inotify');                   </span>
+<span class="lineNum" id="container54"><a name="54"></a><a href="#54" id="line54">      54</a> </span><span class="lineCov">              3 :             return extension_loaded('inotify');                   </span>
 <span class="lineNum" id="container55"><a name="55"></a><a href="#55" id="line55">      55</a> </span>                :         }                                                         
 <span class="lineNum" id="container56"><a name="56"></a><a href="#56" id="line56">      56</a> </span>                :                                                                   
 <span class="lineNum" id="container57"><a name="57"></a><a href="#57" id="line57">      57</a> </span>                :         public function __construct() {                           
-<span class="lineNum" id="container58"><a name="58"></a><a href="#58" id="line58">      58</a> </span><span class="lineCov">              3 :             if (!$this-&gt;isInotifyPhpExtensionLoaded()) {          </span>
+<span class="lineNum" id="container58"><a name="58"></a><a href="#58" id="line58">      58</a> </span><span class="lineCov">              4 :             if (!$this-&gt;isInotifyPhpExtensionLoaded()) {          </span>
 <span class="lineNum" id="container59"><a name="59"></a><a href="#59" id="line59">      59</a> </span><span class="lineCov">              1 :                 throw new Djme_Inotify_Exception_MissingPhpModule(</span>
 <span class="lineNum" id="container60"><a name="60"></a><a href="#60" id="line60">      60</a> </span><span class="lineCov">              1 :                     'Missing PHP module \'inotify\'.');           </span>
 <span class="lineNum" id="container61"><a name="61"></a><a href="#61" id="line61">      61</a> </span>                :             }                                                     
-<span class="lineNum" id="container62"><a name="62"></a><a href="#62" id="line62">      62</a> </span><span class="lineCov">              2 :             $this-&gt;handle = inotify_init();                       </span>
-<span class="lineNum" id="container63"><a name="63"></a><a href="#63" id="line63">      63</a> </span><span class="lineCov">              2 :         }                                                         </span>
+<span class="lineNum" id="container62"><a name="62"></a><a href="#62" id="line62">      62</a> </span><span class="lineCov">              3 :             $this-&gt;handle = inotify_init();                       </span>
+<span class="lineNum" id="container63"><a name="63"></a><a href="#63" id="line63">      63</a> </span><span class="lineCov">              3 :         }                                                         </span>
 <span class="lineNum" id="container64"><a name="64"></a><a href="#64" id="line64">      64</a> </span>                :                                                                   
 <span class="lineNum" id="container65"><a name="65"></a><a href="#65" id="line65">      65</a> </span>                :         public function addWatch($pathname, $mask = null) {       
-<span class="lineNum" id="container66"><a name="66"></a><a href="#66" id="line66">      66</a> </span><span class="lineCov">              1 :             if (!file_exists($pathname)) {                        </span>
-<span class="lineNum" id="container67"><a name="67"></a><a href="#67" id="line67">      67</a> </span><span class="lineCov">              1 :                 throw new Djme_Inotify_Exception_PathNotFound(    </span>
-<span class="lineNum" id="container68"><a name="68"></a><a href="#68" id="line68">      68</a> </span><span class="lineCov">              1 :                     'Path \'\' not found.');                      </span>
+<span class="lineNum" id="container66"><a name="66"></a><a href="#66" id="line66">      66</a> </span><span class="lineCov">              2 :             if (!file_exists($pathname)) {                        </span>
+<span class="lineNum" id="container67"><a name="67"></a><a href="#67" id="line67">      67</a> </span><span class="lineCov">              2 :                 throw new Djme_Inotify_Exception_PathNotFound(    </span>
+<span class="lineNum" id="container68"><a name="68"></a><a href="#68" id="line68">      68</a> </span><span class="lineCov">              2 :                     'Path \''. $pathname. '\' not found.');       </span>
 <span class="lineNum" id="container69"><a name="69"></a><a href="#69" id="line69">      69</a> </span>                :             }                                                     
 <span class="lineNum" id="container70"><a name="70"></a><a href="#70" id="line70">      70</a> </span><span class="lineNoCov">              0 :             return inotify_add_watch($this-&gt;handle, $pathname,    </span>
 <span class="lineNum" id="container71"><a name="71"></a><a href="#71" id="line71">      71</a> </span><span class="lineNoCov">              0 :                 is_null($mask) ? self::ALL_EVENTS : $mask);       </span>
@@ -335,7 +335,7 @@
 
     <table width="100%" border="0" cellspacing="0" cellpadding="0">
       <tr><td class="ruler"><img src="glass.png" width="3" height="3" alt=""></td></tr>
-      <tr><td class="versionInfo">Generated by <a href="http://github.com/sebastianbergmann/php-code-coverage" target="_top">PHP_CodeCoverage 1.1.2</a> using <a href="http://www.php.net/" target="_top">PHP 5.3.10-1ubuntu1</a> and PHPUnit 3.6.10 at Tue Mar 6 21:27:55 UTC 2012.</td></tr>
+      <tr><td class="versionInfo">Generated by <a href="http://github.com/sebastianbergmann/php-code-coverage" target="_top">PHP_CodeCoverage 1.1.2</a> using <a href="http://www.php.net/" target="_top">PHP 5.3.10-1ubuntu1</a> and PHPUnit 3.6.10 at Tue Mar 6 21:30:35 UTC 2012.</td></tr>
     </table>
 
     <br />
@@ -346,13 +346,13 @@
       YAHOO.namespace("phpunit.container");
       YAHOO.phpunit.container.panelsData = {
         "panel54": {
-          "header": "2 tests cover line 54",
-          "body": "<ul><li class=\"testPassed\">Djme_InotifyTest::test_contructor_basic</li><li class=\"testPassed\">Djme_InotifyTest::test_addWatch_emptyPathname</li></ul>",
+          "header": "3 tests cover line 54",
+          "body": "<ul><li class=\"testPassed\">Djme_InotifyTest::test_contructor_basic</li><li class=\"testPassed\">Djme_InotifyTest::test_addWatch_emptyPathname</li><li class=\"testPassed\">Djme_InotifyTest::test_addWatch_wherePathnameDoesNotExist</li></ul>",
           "footer": ""
         },
         "panel58": {
-          "header": "3 tests cover line 58",
-          "body": "<ul><li class=\"testPassed\">Djme_InotifyTest::test_contructor_basic</li><li class=\"testPassed\">Djme_InotifyTest::test_contructor_mockNoInotifyExtension</li><li class=\"testPassed\">Djme_InotifyTest::test_addWatch_emptyPathname</li></ul>",
+          "header": "4 tests cover line 58",
+          "body": "<ul><li class=\"testPassed\">Djme_InotifyTest::test_contructor_basic</li><li class=\"testPassed\">Djme_InotifyTest::test_contructor_mockNoInotifyExtension</li><li class=\"testPassed\">Djme_InotifyTest::test_addWatch_emptyPathname</li><li class=\"testPassed\">Djme_InotifyTest::test_addWatch_wherePathnameDoesNotExist</li></ul>",
           "footer": ""
         },
         "panel59": {
@@ -366,28 +366,28 @@
           "footer": ""
         },
         "panel62": {
-          "header": "2 tests cover line 62",
-          "body": "<ul><li class=\"testPassed\">Djme_InotifyTest::test_contructor_basic</li><li class=\"testPassed\">Djme_InotifyTest::test_addWatch_emptyPathname</li></ul>",
+          "header": "3 tests cover line 62",
+          "body": "<ul><li class=\"testPassed\">Djme_InotifyTest::test_contructor_basic</li><li class=\"testPassed\">Djme_InotifyTest::test_addWatch_emptyPathname</li><li class=\"testPassed\">Djme_InotifyTest::test_addWatch_wherePathnameDoesNotExist</li></ul>",
           "footer": ""
         },
         "panel63": {
-          "header": "2 tests cover line 63",
-          "body": "<ul><li class=\"testPassed\">Djme_InotifyTest::test_contructor_basic</li><li class=\"testPassed\">Djme_InotifyTest::test_addWatch_emptyPathname</li></ul>",
+          "header": "3 tests cover line 63",
+          "body": "<ul><li class=\"testPassed\">Djme_InotifyTest::test_contructor_basic</li><li class=\"testPassed\">Djme_InotifyTest::test_addWatch_emptyPathname</li><li class=\"testPassed\">Djme_InotifyTest::test_addWatch_wherePathnameDoesNotExist</li></ul>",
           "footer": ""
         },
         "panel66": {
-          "header": "1 test covers line 66",
-          "body": "<ul><li class=\"testPassed\">Djme_InotifyTest::test_addWatch_emptyPathname</li></ul>",
+          "header": "2 tests cover line 66",
+          "body": "<ul><li class=\"testPassed\">Djme_InotifyTest::test_addWatch_emptyPathname</li><li class=\"testPassed\">Djme_InotifyTest::test_addWatch_wherePathnameDoesNotExist</li></ul>",
           "footer": ""
         },
         "panel67": {
-          "header": "1 test covers line 67",
-          "body": "<ul><li class=\"testPassed\">Djme_InotifyTest::test_addWatch_emptyPathname</li></ul>",
+          "header": "2 tests cover line 67",
+          "body": "<ul><li class=\"testPassed\">Djme_InotifyTest::test_addWatch_emptyPathname</li><li class=\"testPassed\">Djme_InotifyTest::test_addWatch_wherePathnameDoesNotExist</li></ul>",
           "footer": ""
         },
         "panel68": {
-          "header": "1 test covers line 68",
-          "body": "<ul><li class=\"testPassed\">Djme_InotifyTest::test_addWatch_emptyPathname</li></ul>",
+          "header": "2 tests cover line 68",
+          "body": "<ul><li class=\"testPassed\">Djme_InotifyTest::test_addWatch_emptyPathname</li><li class=\"testPassed\">Djme_InotifyTest::test_addWatch_wherePathnameDoesNotExist</li></ul>",
           "footer": ""
         },
       "dummy": ""

@@ -22,5 +22,14 @@
 			$inotify->addWatch('');
 		}
 		
+		public function test_addWatch_wherePathnameDoesNotExist() {
+			$inotify = new Djme_Inotify();
+			$this->setExpectedException(
+				'Djme_Inotify_Exception_PathNotFound',
+				'Path \'/thispathreallyshouldnoteverexist\' not found.'
+				);
+			$inotify->addWatch('/thispathreallyshouldnoteverexist');
+		}
+		
 	}
 	
