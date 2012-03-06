@@ -62,13 +62,14 @@
 			$this->handle = inotify_init();
 		}
 		
-		public function addWatch($pathname, $mask = null) {
+		public function addWatch($pathname, $mask) {
 			if (!file_exists($pathname)) {
 				throw new Djme_Inotify_Exception_PathNotFound(
 					'Path \''. $pathname. '\' not found.');
 			}
 			if (is_null($mask)) {
-				return inotify_add_watch($this->handle, $pathname);
+				throw new Djme_Inotify_Exception_NullMask(
+					'Mask cannot be null.');
 			}
 			return inotify_add_watch($this->handle, $pathname, $mask);
 		}

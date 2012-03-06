@@ -14,12 +14,12 @@
 			$inotify = new Mock_Djme_Inotify_NoInotifyExtension();
 		}
 		
-		public function test_addWatch_emptyPathname() {
+		public function test_addWatch_withEmptyPathname() {
 			$inotify = new Djme_Inotify();
 			$this->setExpectedException(
 				'Djme_Inotify_Exception_PathNotFound',
 				'Path \'\' not found.');
-			$inotify->addWatch('');
+			$inotify->addWatch('', null);
 		}
 		
 		public function test_addWatch_wherePathnameDoesNotExist() {
@@ -28,7 +28,17 @@
 				'Djme_Inotify_Exception_PathNotFound',
 				'Path \'/thispathreallyshouldnoteverexist\' not found.'
 				);
-			$inotify->addWatch('/thispathreallyshouldnoteverexist');
+			$inotify->addWatch('/thispathreallyshouldnoteverexist',
+				null);
+		}
+		
+		public function test_addWatch_withValidPathnameButNullMask() {
+			$inotify = new Djme_Inotify();
+			$pathname = tempnam(sys_get_temp_dir(), 'pre');
+			$this->setExpectedException(
+				'Djme_Inotify_Exception_NullMask',
+				'Mask cannot be null.');
+			$inotify->addWatch($pathname, null);
 		}
 		
 	}
