@@ -8,6 +8,11 @@
 	<testsuite name="integration">
 		<directory>./tests/integration</directory>
 	</testsuite>
+	<filter>
+		<blacklist>
+			<file>./tests/bootstrap.php</file>
+		</blacklist>
+	</filter>
 	<logging>
 		<log type="coverage-text" target="php://stdout" />
 		<log type="coverage-html" target="./report" />

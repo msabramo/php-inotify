@@ -3,8 +3,8 @@
 	/**
 	 * @todo refactor tests
 	 */
-	class Djme_InotifyIntegrationTest extends PHPUnit_Framework_TestCase {
-	
+	class Djme_InotifyIntegrationTest extends Djme_TestCase {
+		
 		/**
 		 * @todo add test_read_accessWithoutTrigger
 		 * @todo add test_read_access
@@ -16,8 +16,7 @@
 		public function test_addWatch_modifyWithoutTrigger() {
 			// setup
 			$inotify = new Djme_Inotify();
-			$pathname = tempnam(sys_get_temp_dir(), 'pre');
-			$this->temporaryFilepaths[] = $pathname;
+			$pathname = $this->createTemporaryFile();
 			$this->assertInternalType('integer',
 				$inotify->addWatch($pathname, Djme_Inotify::MODIFY));
 			
@@ -34,8 +33,7 @@
 		public function test_addWatch_modify() {
 			// setup
 			$inotify = new Djme_Inotify();
-			$pathname = tempnam(sys_get_temp_dir(), 'pre');
-			$this->temporaryFilepaths[] = $pathname;
+			$pathname = $this->createTemporaryFile();
 			$this->assertInternalType('integer',
 				$inotify->addWatch($pathname, Djme_Inotify::MODIFY));
 			
@@ -64,8 +62,7 @@
 		public function test_read_attribWithoutTrigger() {
 			// setup
 			$inotify = new Djme_Inotify();
-			$pathname = tempnam(sys_get_temp_dir(), 'pre');
-			$this->temporaryFilepaths[] = $pathname;
+			$pathname = $this->createTemporaryFile();
 			$this->assertInternalType('integer',
 				$inotify->addWatch($pathname, Djme_Inotify::ATTRIB));
 			
@@ -82,8 +79,7 @@
 		public function test_addWatch_attrib() {
 			// setup
 			$inotify = new Djme_Inotify();
-			$pathname = tempnam(sys_get_temp_dir(), 'pre');
-			$this->temporaryFilepaths[] = $pathname;
+			$pathname = $this->createTemporaryFile();
 			$this->assertInternalType('integer',
 				$inotify->addWatch($pathname, Djme_Inotify::ATTRIB));
 			

@@ -1,14 +1,6 @@
 <?php
 	
-	class Djme_InotifyUnitTest extends PHPUnit_Framework_TestCase {
-		
-		private $temporaryFilepaths = array ();
-		
-		protected function tearDown() {
-			foreach ($this->temporaryFilepaths as $path) {
-				unlink($path);
-			}
-		}
+	class Djme_InotifyUnitTest extends Djme_TestCase {
 		
 		public function test_contructor_basic() {
 			// setup
@@ -47,8 +39,7 @@
 		public function test_addWatch_withValidPathnameButNullMask() {
 			// setup
 			$inotify = new Djme_Inotify();
-			$pathname = tempnam(sys_get_temp_dir(), 'pre');
-			$this->temporaryFilepaths[] = $pathname;
+			$pathname = $this->createTemporaryFile();
 			
 			// check
 			$this->setExpectedException(
